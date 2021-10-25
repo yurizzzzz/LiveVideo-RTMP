@@ -13,6 +13,8 @@
 - 安装nginx和nginx-rtmp-module的依赖
 ```
 sudo apt-get install build-essential libpcre3 libpcre3-dev libssl-dev
+sudo apt-get install zlib1g
+sudo apt-get install zlib1g-dev
 ```
 - 下载nginx和nginx-rtmp-module的源码
 ```
@@ -88,7 +90,10 @@ rtmp {
 ```
 sudo systemctl restart nginx
 ```
+- 在云服务器的安全组里添加1935端口
+
 ## 启用摄像头进行推流(这里仅做CSI摄像头推流，USB摄像头类似)
+
 - 使用ffmpeg进行推流
 ```
 python ffmpeg.py
